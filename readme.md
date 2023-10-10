@@ -43,7 +43,6 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/indratensei/indratensei/output/snake.svg" alt="Snake animation" />
 
 ###
 
