@@ -30,10 +30,6 @@
   <img src="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=dracula&hide_border=true&count_private=true&include_all_commits=true&bg_color=282a36&title_color=bd93f9&icon_color=bd93f9&text_color=f8f8f2&border_color=44475a" alt="github stats">
 </picture>
 
-</div>
-
-<div align="center">
-
 <picture>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=dracula&hide_border=true&background=282a36&stroke=44475a&ring=bd93f9&fire=ff6b35&currStreakLabel=bd93f9&sideLabels=f8f8f2&dates=6272a4" alt="streak">
 </picture>
