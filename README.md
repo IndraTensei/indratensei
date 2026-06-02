@@ -1,7 +1,10 @@
+<p align="right">
+  <img src="https://komarev.com/ghpvc/?username=IndraTensei&style=flat-square&color=bd93f9" alt="">
+</p>
+
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/IndraTensei/indratensei/main/terminal.gif">
   <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/main/terminal.gif" alt="terminal">
 </picture>
 
@@ -14,8 +17,7 @@
 ### Tech Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=js,ts,py,c,cpp,html,css,react,bootstrap,jest,nodejs,fastapi,express,npm,yarn,docker,kubernetes,terraform,azure,gcp,jenkins,git,github,gitlab,linux,ubuntu,vscode,idea,jupyter,selenium,mysql,cmake&perline=12&theme=dark">
-  <img src="https://skillicons.dev/icons?i=js,ts,py,c,cpp,html,css,react,bootstrap,jest,nodejs,fastapi,express,npm,yarn,docker,kubernetes,terraform,azure,gcp,jenkins,git,github,gitlab,linux,ubuntu,vscode,idea,jupyter,selenium,mysql,cmake&perline=12&theme=dark" alt="tech stack">
+  <img src="https://skillicons.dev/icons?i=js,ts,py,c,cpp,html,css,react,bootstrap,jest,nodejs,fastapi,express,npm,yarn,docker,kubernetes,terraform,azure,gcp,jenkins,git,github,gitlab,linux,ubuntu,vscode,idea,jupyter,selenium,mysql,cmake&perline=13&theme=dark" alt="tech stack">
 </picture>
 
 </div>
@@ -25,11 +27,7 @@
 <div align="center">
 
 <picture>
-  <img src="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=dracula&hide_border=true&count_private=true&include_all_commits=true" alt="github stats">
-</picture>
-
-<picture>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=dracula&hide_border=true" alt="streak">
+  <img src="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=dracula&hide_border=true&count_private=true&include_all_commits=true&bg_color=282a36&title_color=bd93f9&icon_color=bd93f9&text_color=f8f8f2&border_color=44475a" alt="github stats">
 </picture>
 
 </div>
@@ -37,7 +35,15 @@
 <div align="center">
 
 <picture>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=compact&theme=dracula&hide_border=true&langs_count=8" alt="top langs">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=dracula&hide_border=true&background=282a36&stroke=44475a&ring=bd93f9&fire=ff6b35&currStreakLabel=bd93f9&sideLabels=f8f8f2&dates=6272a4" alt="streak">
+</picture>
+
+</div>
+
+<div align="center">
+
+<picture>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=compact&theme=dracula&hide_border=true&bg_color=282a36&title_color=bd93f9&text_color=f8f8f2&border_color=44475a&langs_count=8" alt="top langs">
 </picture>
 
 </div>
@@ -49,7 +55,7 @@
 ### Recently Played
 
 <picture>
-  <img src="https://lastfm-recently-played.vercel.app/api?user=indratenseii&count=5&width=500&loved=true&show_user=header&bg_color=0d1117&border_radius=8" alt="last.fm">
+  <img src="https://lastfm-recently-played.vercel.app/api?user=indratenseii&count=5&width=500&loved=true&show_user=header&bg_color=282a36&border_radius=8" alt="last.fm">
 </picture>
 
 </div>
@@ -79,7 +85,5 @@
 <picture>
   <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake-dark.svg" alt="snake">
 </picture>
-
-<img src="https://komarev.com/ghpvc/?username=IndraTensei&style=flat-square&color=38d87f" alt="visitors">
 
 </div>
