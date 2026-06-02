@@ -7,8 +7,6 @@
 
 </div>
 
-<p align="center"><sub>Generated using <a href="https://github.com/x0rzavi/github-readme-terminal">github-readme-terminal</a></sub></p>
-
 ---
 
 <div align="center">
@@ -27,13 +25,11 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=github_dark_dimmed&hide_border=true&count_private=true&include_all_commits=true&bg_color=0d1117">
-  <img src="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=github_dark_dimmed&hide_border=true&count_private=true&include_all_commits=true&bg_color=0d1117" alt="github stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=dracula&hide_border=true&count_private=true&include_all_commits=true" alt="github stats">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=github-dark-dimmed&hide_border=true&background=0d1117&ring=38d87f&fire=ff6b35&currStreakLabel=38d87f">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=github-dark-dimmed&hide_border=true&background=0d1117&ring=38d87f&fire=ff6b35&currStreakLabel=38d87f" alt="streak">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=dracula&hide_border=true" alt="streak">
 </picture>
 
 </div>
@@ -41,8 +37,7 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=donut-vertical&theme=github_dark_dimmed&hide_border=true&bg_color=0d1117&langs_count=8">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=donut-vertical&theme=github_dark_dimmed&hide_border=true&bg_color=0d1117&langs_count=8" alt="top langs">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=compact&theme=dracula&hide_border=true&langs_count=8" alt="top langs">
 </picture>
 
 </div>
@@ -54,7 +49,6 @@
 ### Recently Played
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://lastfm-recently-played.vercel.app/api?user=indratenseii&count=5&width=500&loved=true&show_user=header&bg_color=0d1117&border_radius=8">
   <img src="https://lastfm-recently-played.vercel.app/api?user=indratenseii&count=5&width=500&loved=true&show_user=header&bg_color=0d1117&border_radius=8" alt="last.fm">
 </picture>
 
@@ -83,7 +77,6 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake-dark.svg">
   <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake-dark.svg" alt="snake">
 </picture>
 
