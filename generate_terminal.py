@@ -1,39 +1,130 @@
-import subprocess, os
+"""Generates an animated terminal GIF for the profile README.
 
-token = subprocess.check_output(['gh', 'auth', 'token']).decode().strip()
-os.environ['GITHUB_TOKEN'] = token
+Scenes:
+  1. ssh into github
+  2. neofetch with ASCII banner + live GitHub stats
+  3. dynamic top-language skill bars (pulled from real repo data)
+  4. status outro with resting prompt
+
+Requires: pip install github-readme-terminal  (GITHUB_TOKEN env var must be set)
+"""
 
 import gifos
 
-t = gifos.Terminal(width=900, height=460, xpad=20, ypad=20)
-s = gifos.utils.fetch_github_stats(user_name="IndraTensei")
+USER = "IndraTensei"
 
-L = [
-    "",
+# ---- dracula-flavored 4-bit ANSI palette ----
+R = "\x1b[0m"
+B = "\x1b[1m"
+PURPLE = "\x1b[95m"
+CYAN = "\x1b[96m"
+GREEN = "\x1b[92m"
+YELLOW = "\x1b[93m"
+GRAY = "\x1b[90m"
+
+PROMPT = f"{GREEN}indra{GRAY}@{PURPLE}github{GRAY}:{CYAN}~{R}$ "
+
+ART = [
     "  ___       _            _            _                ",
     " |_ _|_ __ | |_ __ _  __| | ___  __ _| |_ ___  ___ ___ ",
-    "  | || '_ \\| __/ ` |/ _` |/ _ \\/ _` | __/ _ \\/ __/ __|",
+    "  | || '_ \\| __/ _` |/ _` |/ _ \\/ _` | __/ _ \\/ __/ __|",
     "  | || | | | || (_| | (_| |  __/ (_| | ||  __/\\__ \\__ \\",
     " |___|_| |_|\\__\\__,_|\\__,_|\\___|\\__,_|\\__\\___||___/___/",
-    "",
-    "  indratensei@github",
-    "  -----------------------------------------------",
-    "  OS:          Linux (Ubuntu) x86_64",
-    "  Shell:       bash 5.1.16",
-    "  Location:    Mumbai, India",
-    "  Languages:   JS  TS  Python  C  C++",
-    "  Focus:       Full-Stack + DevOps + Cloud",
-    f"  Followers:   {s.total_followers}",
-    f"  Stars:       {s.total_stargazers}",
-    f"  Commits:     {s.total_commits_all_time}",
-    f"  PRs Merged:  {s.total_pull_requests_merged}",
-    "",
-    "  > Online",
-    "",
 ]
 
-for i, line in enumerate(L, 1):
-    t.gen_text(text=line, row_num=i, contin=True)
+t = gifos.Terminal(width=900, height=720, xpad=20, ypad=20)
+
+# ---- fetch live stats, but never fail the build ----
+try:
+    stats = gifos.utils.fetch_github_stats(user_name=USER)
+except Exception:
+    stats = None
+
+
+def stat(attr, default="-"):
+    val = getattr(stats, attr, None) if stats else None
+    return default if val in (None, "") else val
+
+
+def top_langs(n=5):
+    fallback = [
+        ("Python", 40.0),
+        ("TypeScript", 25.0),
+        ("JavaScript", 15.0),
+        ("C++", 12.0),
+        ("Go", 8.0),
+    ]
+    raw = getattr(stats, "languages_sorted", None) if stats else None
+    if not raw:
+        return fallback
+    out = []
+    for item in raw[:n]:
+        try:
+            out.append((str(item[0]), float(item[1])))
+        except Exception:
+            continue
+    return out or fallback
+
+
+def cmd(row, text, pause=8):
+    """Render prompt, then type the command keystroke-by-keystroke."""
+    t.gen_text(PROMPT, row, contin=True)
+    t.gen_typing_text(text, row, contin=True)
+    t.clone_frame(pause)
+
+
+def line(row, text):
+    t.gen_text(text, row, contin=True)
+
+
+# ---- opening pause ----
+t.gen_text("", 1, count=10)
+
+# ---- scene 1: connect ----
+cmd(1, "ssh indratensei@github.com")
+line(2, f"  {GREEN}[ok]{R} connection established {GRAY}(auth: ed25519){R}")
+t.clone_frame(6)
+
+# ---- scene 2: neofetch ----
+cmd(4, "neofetch")
+for i, art_line in enumerate(ART):
+    line(6 + i, f"{PURPLE}{art_line}{R}")
+line(12, f"  {B}{PURPLE}indratensei{R}{GRAY}@{R}{B}{CYAN}github{R}")
+line(13, f"  {GRAY}{'-' * 47}{R}")
+
+info = [
+    ("OS", "Ubuntu 24.04 LTS x86_64"),
+    ("Shell", "zsh + tmux + neovim"),
+    ("Location", "Mumbai, India (UTC+5:30)"),
+    ("Focus", "Full-Stack / DevOps / Cloud / AI"),
+    ("Followers", str(stat("total_followers"))),
+    ("Stars", str(stat("total_stargazers"))),
+    ("Commits", str(stat("total_commits_all_time"))),
+    ("PRs Merged", str(stat("total_pull_requests_merged"))),
+]
+for i, (key, val) in enumerate(info):
+    line(14 + i, f"  {CYAN}{key:<12}{R}{val}")
+t.clone_frame(15)
+
+# ---- scene 3: dynamic skill bars ----
+cmd(24, "./skills --top 5")
+langs = top_langs()
+max_pct = max(pct for _, pct in langs) or 1.0
+BAR_WIDTH = 20
+for i, (name, pct) in enumerate(langs):
+    filled = max(1, round(pct / max_pct * BAR_WIDTH))
+    bar = f"{PURPLE}{'#' * filled}{GRAY}{'-' * (BAR_WIDTH - filled)}{R}"
+    line(25 + i, f"  {YELLOW}{name[:12]:<14}{R}[{bar}] {pct:.1f}%")
+t.clone_frame(12)
+
+# ---- scene 4: status outro ----
+cmd(31, "echo $STATUS")
+line(32, f"  {GREEN}* online{R} {GRAY}--{R} building, shipping, repeating")
+t.clone_frame(10)
+
+# ---- resting prompt ----
+line(34, PROMPT)
+t.clone_frame(40)
 
 t.gen_gif()
-print("Done")
+print("terminal gif generated")

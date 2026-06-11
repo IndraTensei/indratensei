@@ -16,8 +16,46 @@
 
 ### Tech Stack
 
+**Languages**
+
 <picture>
-  <img src="https://skillicons.dev/icons?i=js,ts,py,c,cpp,html,css,react,bootstrap,jest,nodejs,fastapi,express,npm,yarn,docker,kubernetes,terraform,azure,gcp,jenkins,git,github,gitlab,linux,ubuntu,vscode,idea,jupyter,selenium,mysql,cmake&perline=13&theme=dark" alt="tech stack">
+  <img src="https://skillicons.dev/icons?i=js,ts,py,c,cpp,rust,go,bash&theme=dark" alt="languages">
+</picture>
+
+**Frontend**
+
+<picture>
+  <img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,vite,html,css,bootstrap&theme=dark" alt="frontend">
+</picture>
+
+**Backend**
+
+<picture>
+  <img src="https://skillicons.dev/icons?i=nodejs,bun,deno,express,fastapi,graphql,nginx,jest&theme=dark" alt="backend">
+</picture>
+
+**AI / Data**
+
+<picture>
+  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,opencv,jupyter,selenium&theme=dark" alt="ai-data">
+</picture>
+
+**Databases**
+
+<picture>
+  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,sqlite&theme=dark" alt="databases">
+</picture>
+
+**DevOps & Cloud**
+
+<picture>
+  <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,aws,azure,gcp,cloudflare,jenkins,githubactions,grafana,prometheus&theme=dark" alt="devops">
+</picture>
+
+**Tools & Environment**
+
+<picture>
+  <img src="https://skillicons.dev/icons?i=git,github,gitlab,linux,ubuntu,arch,neovim,vscode,idea,npm,pnpm,yarn,postman,cmake&theme=dark" alt="tools">
 </picture>
 
 </div>
@@ -39,10 +77,37 @@
 <div align="center">
 
 <picture>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=compact&theme=dracula&hide_border=true&bg_color=282a36&title_color=bd93f9&text_color=f8f8f2&border_color=44475a&langs_count=8" alt="top langs">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=compact&theme=dracula&hide_border=true&bg_color=282a36&title_color=bd93f9&text_color=f8f8f2&border_color=44475a&langs_count=10" alt="top langs">
 </picture>
 
 </div>
+
+<div align="center">
+
+<picture>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=IndraTensei&theme=dracula&hide_border=true&bg_color=282a36&color=f8f8f2&line=bd93f9&point=ff79c6&area=true&area_color=44475a" alt="activity graph">
+</picture>
+
+</div>
+
+<div align="center">
+
+<picture>
+  <img src="https://github-profile-trophy.vercel.app/?username=IndraTensei&theme=dracula&no-frame=true&no-bg=true&row=1&column=7&margin-w=8" alt="trophies">
+</picture>
+
+</div>
+
+---
+
+<div align="center">
+
+### Recent Activity
+
+</div>
+
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
 
 ---
 
