@@ -127,4 +127,23 @@ line(34, PROMPT)
 t.clone_frame(40)
 
 t.gen_gif()
-print("terminal gif generated")
+
+# ---- locate the generated gif and move it into the repo root ----
+# newer gifos versions write output to the OS temp dir instead of cwd
+import glob
+import os
+import shutil
+import tempfile
+
+candidates = []
+for base in (os.getcwd(), tempfile.gettempdir()):
+    candidates += glob.glob(os.path.join(base, "output.gif"))
+    candidates += glob.glob(os.path.join(base, "**", "output.gif"), recursive=True)
+
+candidates = [c for c in candidates if os.path.isfile(c)]
+if not candidates:
+    raise SystemExit("ERROR: output.gif not found in cwd or temp dir")
+
+newest = max(set(candidates), key=os.path.getmtime)
+shutil.move(newest, os.path.join(os.getcwd(), "terminal.gif"))
+print(f"terminal gif generated: moved {newest} -> terminal.gif")
