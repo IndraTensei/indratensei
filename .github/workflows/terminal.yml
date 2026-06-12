@@ -33,7 +33,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output.gif
-          git mv output.gif terminal.gif
+          GIF_PATH=$(find . -name 'output.gif' -not -path './.git/*' -print -quit)
+          if [ -z "$GIF_PATH" ]; then
+            echo "output.gif not found" >&2
+            exit 1
+          fi
+          mv "$GIF_PATH" terminal.gif
+          git add terminal.gif
           git diff --staged --quiet || git commit -m "Update terminal GIF [skip ci]"
           git push
