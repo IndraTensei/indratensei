@@ -107,6 +107,11 @@
 </div>
 
 <!--START_SECTION:activity-->
+1. 🎉 Merged PR [#3](https://github.com/IndraTensei/indratensei/pull/3) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
+2. 💪 Opened PR [#3](https://github.com/IndraTensei/indratensei/pull/3) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
+3. 🎉 Merged PR [#2](https://github.com/IndraTensei/indratensei/pull/2) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
+4. 💪 Opened PR [#2](https://github.com/IndraTensei/indratensei/pull/2) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
+5. 🎉 Merged PR [#1](https://github.com/IndraTensei/indratensei/pull/1) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
 <!--END_SECTION:activity-->
 
 ---
