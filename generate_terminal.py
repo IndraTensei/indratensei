@@ -24,13 +24,19 @@ GRAY = "\x1b[90m"
 
 PROMPT = f"{GREEN}indra{GRAY}@{PURPLE}github{GRAY}:{CYAN}~{R}$ "
 
-ART = [
-    "  ___       _            _            _                ",
-    " |_ _|_ __ | |_ __ _  __| | ___  __ _| |_ ___  ___ ___ ",
-    "  | || '_ \\| __/ _` |/ _` |/ _ \\/ _` | __/ _ \\/ __/ __|",
-    "  | || | | | || (_| | (_| |  __/ (_| | ||  __/\\__ \\__ \\",
-    " |___|_| |_|\\__\\__,_|\\__,_|\\___|\\__,_|\\__\\___||___/___/",
-]
+# figlet-style banner assembled per-glyph so it provably spells "IndraTensei"
+GLYPHS = {
+    "I": [" ___ ", "|_ _|", " | | ", " | | ", "|___|"],
+    "n": ["       ", " _ __  ", "| '_ \\ ", "| | | |", "|_| |_|"],
+    "d": ["     _ ", "  __| |", " / _` |", "| (_| |", " \\__,_|"],
+    "r": ["      ", " _ __ ", "| '__|", "| |   ", "|_|   "],
+    "a": ["       ", "  __ _ ", " / _` |", "| (_| |", " \\__,_|"],
+    "T": [" _____ ", "|_   _|", "  | |  ", "  | |  ", "  |_|  "],
+    "e": ["      ", "  ___ ", " / _ \\", "|  __/", " \\___|"],
+    "s": ["     ", " ___ ", "/ __|", "\\__ \\", "|___/"],
+    "i": [" _ ", "(_)", "| |", "| |", "|_|"],
+}
+ART = ["  " + "".join(GLYPHS[ch][row] for ch in "IndraTensei") for row in range(5)]
 
 t = gifos.Terminal(width=900, height=720, xpad=20, ypad=20)
 
@@ -54,15 +60,21 @@ def top_langs(n=5):
         ("C++", 12.0),
         ("Go", 8.0),
     ]
+    excluded = {"php"}  # side-project noise, keep it out of the top langs
     raw = getattr(stats, "languages_sorted", None) if stats else None
     if not raw:
         return fallback
     out = []
-    for item in raw[:n]:
+    for item in raw:
         try:
-            out.append((str(item[0]), float(item[1])))
+            name, pct = str(item[0]), float(item[1])
         except Exception:
             continue
+        if name.lower() in excluded:
+            continue
+        out.append((name, pct))
+        if len(out) == n:
+            break
     return out or fallback
 
 
