@@ -52,30 +52,10 @@ def stat(attr, default="-"):
     return default if val in (None, "") else val
 
 
-def top_langs(n=4):
-    fallback = [
-        ("Python", 45.0),
-        ("TypeScript", 33.0),
-        ("JavaScript", 20.0),
-        ("Shell", 1.0),
-    ]
-    # old side projects and markup, not what I write day to day
-    excluded = {"php", "html", "css", "scss", "less", "glsl", "lua", "cython", "c", "c++", "kotlin"}
-    raw = getattr(stats, "languages_sorted", None) if stats else None
-    if not raw:
-        return fallback
-    out = []
-    for item in raw:
-        try:
-            name, pct = str(item[0]), float(item[1])
-        except Exception:
-            continue
-        if name.lower() in excluded:
-            continue
-        out.append((name, pct))
-        if len(out) == n:
-            break
-    return out or fallback
+# GitHub's language stats only see public repos, where one old PHP site drowns
+# everything else. These are counted from all of my own repos instead, the same
+# numbers as art/loadout.svg.
+LANGS = [("Python", 51), ("JavaScript", 37), ("TypeScript", 25)]
 
 
 def cmd(row, text, pause=8):
@@ -118,15 +98,14 @@ for i, (key, val) in enumerate(info):
     line(14 + i, f"  {CYAN}{key:<12}{R}{val}")
 t.clone_frame(15)
 
-# ---- scene 3: dynamic skill bars ----
-cmd(24, "./skills --top 4")
-langs = top_langs()
-max_pct = max(pct for _, pct in langs) or 1.0
+# ---- scene 3: what I write, by how many repos use it ----
+cmd(24, "./skills --by repos")
+top = max(n for _, n in LANGS)
 BAR_WIDTH = 20
-for i, (name, pct) in enumerate(langs):
-    filled = max(1, round(pct / max_pct * BAR_WIDTH))
+for i, (name, n) in enumerate(LANGS):
+    filled = max(1, round(n / top * BAR_WIDTH))
     bar = f"{PURPLE}{'#' * filled}{GRAY}{'-' * (BAR_WIDTH - filled)}{R}"
-    line(25 + i, f"  {YELLOW}{name[:12]:<14}{R}[{bar}] {pct:.1f}%")
+    line(25 + i, f"  {YELLOW}{name:<14}{R}[{bar}] {n} repos")
 t.clone_frame(12)
 
 # ---- scene 4: status outro ----
