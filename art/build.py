@@ -20,7 +20,7 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like 
 INK, PAPER, BLOOD = "#0a0a0a", "#eee8db", "#e8262d"
 
 LATIN = string.ascii_letters + string.digits + " .,:;/+×·'&()!?-_%#@"
-KANJI = "転生灰装備言絵鋼蔵繋智城"
+KANJI = "転生灰装備言絵鋼蔵繋智城戦績話金店覇"
 
 
 def get(url):
@@ -188,8 +188,92 @@ def loadout():
 </svg>'''
 
 
+# ---------------------------------------------------------------- record
+
+# the numbers from production, one word-pair each
+STATS = [
+    ("50", "+", "TOURNEYS", "A MONTH", "戦"),
+    ("2K", "+", "BOT MSGS", "A DAY", "話"),
+    ("1K", "+", "TOP-UP", "USERS", "金"),
+    ("500", "+", "SHOPPING", "IN WHATSAPP", "店"),
+    ("100", "+", "LIVE", "VIEWERS", "覇"),
+]
+# what's on the bench right now, scrolling like a match ticker
+NOW = ["ZERO, THE WHATSAPP BOT THAT TALKS BACK", "ZERO ON DISCORD", "JARVIS, HANDS-FREE", "A COURIER AGENT THAT TAKES CALLS IN HINDI", "INTERVIEW TRAP"]
+
+
+def record():
+    W, PAD, GAP = 1200, 40, 16
+    pw = (W - 2 * PAD - 4 * GAP) / 5
+    ph = 168
+    py = 104
+    ty = py + ph + 22  # ticker strip
+    H = ty + 50 + PAD - 8
+    out = []
+
+    out.append(f'<text class="k" x="{PAD}" y="68" font-size="34" fill="{BLOOD}">戦績</text>')
+    out.append(f'<text class="d" x="{PAD + 80}" y="66" font-size="30" fill="{PAPER}">RECORD</text>')
+    out.append(f'<circle class="live" cx="{W - PAD - 150}" cy="57" r="5" fill="{BLOOD}"/>')
+    out.append(f'<text class="m" x="{W - PAD}" y="62" font-size="13" fill="{PAPER}" fill-opacity=".55" text-anchor="end">LIVE IN PROD</text>')
+    out.append(f'<line x1="{PAD}" y1="84" x2="{W - PAD}" y2="84" stroke="{PAPER}" stroke-opacity=".12"/>')
+
+    for i, (num, plus, l1, l2, kj) in enumerate(STATS):
+        x = PAD + i * (pw + GAP)
+        out.append(f'<g class="up" style="animation-delay:{0.1 + i * 0.09:.2f}s">')
+        out.append(f'<clipPath id="c{i}"><rect x="{x}" y="{py}" width="{pw}" height="{ph}" rx="12"/></clipPath>')
+        out.append(f'<rect x="{x}" y="{py}" width="{pw}" height="{ph}" rx="12" fill="{PAPER}" fill-opacity=".035" stroke="{PAPER}" stroke-opacity=".1"/>')
+        out.append(f'<text class="k" x="{x + pw + 14}" y="{py + ph + 22}" font-size="150" fill="{PAPER}" fill-opacity=".05" text-anchor="end" clip-path="url(#c{i})">{kj}</text>')
+        out.append(f'<text class="d" x="{x + 20}" y="{py + 78}" font-size="52" fill="{PAPER}">{num}<tspan fill="{BLOOD}">{plus}</tspan></text>')
+        out.append(f'<rect class="bar" x="{x + 22}" y="{py + 98}" width="28" height="3" fill="{BLOOD}" style="animation-delay:{0.4 + i * 0.09:.2f}s"/>')
+        out.append(f'<text class="m" x="{x + 22}" y="{py + 128}" font-size="13" fill="{PAPER}" fill-opacity=".72">{l1}</text>')
+        out.append(f'<text class="m" x="{x + 22}" y="{py + 148}" font-size="13" fill="{PAPER}" fill-opacity=".42">{l2}</text>')
+        out.append('</g>')
+
+    # ticker: JetBrains Mono is monospaced, so one loop's width is exact
+    fs, ls = 14, 2.5
+    adv = fs * 0.6 + ls
+    sep = "   ·   "
+    loop = sep.join(NOW) + sep
+    lw = len(loop) * adv
+    spans = "".join(
+        f'<tspan fill="{BLOOD}">·</tspan>' if ch == "·" else ch
+        for ch in loop.replace("&", "&amp;")
+    )
+    out.append(f'<rect x="{PAD}" y="{ty}" width="{W - 2 * PAD}" height="44" rx="10" fill="{BLOOD}" fill-opacity=".09" stroke="{BLOOD}" stroke-opacity=".35"/>')
+    out.append(f'<rect x="{PAD}" y="{ty}" width="96" height="44" rx="10" fill="{BLOOD}"/>')
+    out.append(f'<rect x="{PAD + 80}" y="{ty}" width="16" height="44" fill="{BLOOD}"/>')
+    out.append(f'<text class="d" x="{PAD + 48}" y="{ty + 29}" font-size="17" fill="{INK}" text-anchor="middle">NOW</text>')
+    out.append(f'<clipPath id="tk"><rect x="{PAD + 108}" y="{ty}" width="{W - 2 * PAD - 120}" height="44"/></clipPath>')
+    out.append(f'<g clip-path="url(#tk)"><g class="tick">')
+    for k in range(3):
+        out.append(f'<text class="mt" x="{PAD + 116 + k * lw:.1f}" y="{ty + 27}" font-size="{fs}" fill="{PAPER}" fill-opacity=".85" xml:space="preserve">{spans}</text>')
+    out.append('</g></g>')
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Record: 50+ tournaments a month, 2,000+ bot messages a day, 1,000+ top-up users, 500+ people shopping inside WhatsApp, 100+ live viewers. Now building: {", ".join(NOW).title()}.">
+<defs>
+<style>{fonts_css("D", "M", "K")}
+.d{{font-family:D,Impact,sans-serif}} .m{{font-family:M,ui-monospace,monospace;letter-spacing:.18em}} .mt{{font-family:M,ui-monospace,monospace;letter-spacing:{ls}px}} .k{{font-family:K,serif}}
+.up{{animation:up .8s cubic-bezier(.16,1,.3,1) backwards}}
+.bar{{transform-box:fill-box;transform-origin:left;animation:grow .9s cubic-bezier(.16,1,.3,1) backwards}}
+.live{{animation:pulse 1.6s ease-in-out infinite}}
+.tick{{animation:tick {lw / 38:.1f}s linear infinite}}
+@keyframes up{{from{{opacity:0;transform:translateY(12px)}}to{{opacity:1;transform:none}}}}
+@keyframes grow{{from{{transform:scaleX(0)}}}}
+@keyframes pulse{{50%{{opacity:.25}}}}
+@keyframes tick{{to{{transform:translateX(-{lw:.1f}px)}}}}
+</style>
+{HALFTONE}
+<linearGradient id="fade" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#000"/></linearGradient>
+<mask id="m"><rect width="{W}" height="{H}" fill="url(#fade)"/></mask>
+</defs>
+<rect width="{W}" height="{H}" rx="18" fill="{INK}"/>
+<rect width="{W}" height="{H}" fill="url(#dots)" opacity=".07" mask="url(#m)"/>
+{chr(10).join(out)}
+</svg>'''
+
+
 if __name__ == "__main__":
-    for name, build in (("header.svg", header), ("loadout.svg", loadout)):
+    for name, build in (("header.svg", header), ("record.svg", record), ("loadout.svg", loadout)):
         with open(os.path.join(HERE, name), "w", encoding="utf-8", newline="\n") as f:
             f.write(build())
         print(name, os.path.getsize(os.path.join(HERE, name)) // 1024, "KB")
