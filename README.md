@@ -1,155 +1,77 @@
-<p align="right">
-  <img src="https://komarev.com/ghpvc/?username=IndraTensei&style=flat-square&color=bd93f9" alt="">
-</p>
-
 <div align="center">
 
-<picture>
-  <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/main/terminal.gif" alt="terminal">
-</picture>
+<a href="https://www.indratensei.me"><img src="art/header.svg" width="100%" alt="Indra Tensei. Ash, agentic software engineer from Navi Mumbai."></a>
 
 </div>
 
----
+<br>
+
+I'm **Ash**. I build AI agents and the bots that live inside apps people already use: a WhatsApp bot that runs group chats, the same bot on Discord with music and an economy, voice agents that answer the phone in Hindi, and the storefronts and tournament sites around them.
+
+Most of that runs in production, so it lives in private repos. The public ones are side quests.
+
+<br>
+
+### 現 &nbsp;On the bench
+
+<table>
+<tr><td align="center">零</td><td><b><a href="https://www.indratensei.me/qinshin">Zero</a></b></td><td>The WhatsApp bot that talks back. Send it a voice note, get one back. Plus the Jade economy, murder mysteries, MLBB scrims, stickers and downloads.</td></tr>
+<tr><td align="center">結</td><td><b><a href="https://www.indratensei.me/qinshin/discord">Zero on Discord</a></b></td><td>Music, the Jade economy, and one profile shared with WhatsApp. Python, Postgres, Lavalink.</td></tr>
+<tr><td align="center">声</td><td><b>JARVIS</b></td><td>Hands-free voice assistant. An Android app that drives my Windows machine through a bridge.</td></tr>
+<tr><td align="center">話</td><td><b>Courier voice agent</b></td><td>Tells you where your parcel is, on a phone call, in Hindi, Marathi or English. Pipecat, Deepgram, Cartesia.</td></tr>
+<tr><td align="center">罠</td><td><b>Interview Trap</b></td><td>System design interview reels in Hinglish, rendered as code with Remotion.</td></tr>
+<tr><td align="center">灰</td><td><b><a href="https://www.indratensei.me">indratensei.me</a></b></td><td>My portfolio, plus Cubee, a little guide that roams the page and pulls about thirty faces.</td></tr>
+</table>
+
+### 戦 &nbsp;Shipped
+
+- **Tournament ops AI** &nbsp;·&nbsp; a multi-agent pipeline that runs **50+ MLBB tournaments a month** in India. It replaced a three-person manual ops team.
+- **Gaming top-up platform** &nbsp;·&nbsp; OTP login, wallets, orders and payment webhooks for **1,000+ users**. Fastify, MongoDB, Redis.
+- **Storefront network** &nbsp;·&nbsp; three top-up stores on one shared core. **500+ active users** top up straight from WhatsApp.
+- **Esports tournament platform** &nbsp;·&nbsp; registration, brackets and live scores for **100+ concurrent viewers** across 10+ tournaments.
+- **WhatsApp ⇄ Discord AI bridge** &nbsp;·&nbsp; **2,000+ messages a day**, replies in under 5 seconds.
+
+<br>
 
 <div align="center">
 
-### Tech Stack
+<img src="art/loadout.svg" width="100%" alt="Loadout. Languages: Python, JavaScript, TypeScript. Frontend: React, Tailwind, Next.js, GSAP. Backend: Node.js, Zod, Express, Fastify. Data: PostgreSQL, MongoDB, Drizzle, Redis. Bots: Discord, WhatsApp, FFmpeg, Puppeteer. AI: OpenRouter, Deepgram, OpenAI, Claude. Ship: Docker, Vercel, GitHub Actions, Oracle Cloud.">
 
-**Languages**
+<br><br>
 
-<picture>
-  <img src="https://skillicons.dev/icons?i=js,ts,py,c,cpp,rust,go,bash&theme=dark" alt="languages">
-</picture>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&hide_border=true&border_radius=14&background=0A0A0A&stroke=2A2A2A&ring=E8262D&fire=E8262D&currStreakNum=EEE8DB&currStreakLabel=E8262D&sideNums=EEE8DB&sideLabels=EEE8DB&dates=8A857C" width="49%" align="top" alt="contribution streak">
+<img src="https://lastfm-recently-played.vercel.app/api?user=indratenseii&count=3&width=495&loved=true&show_user=header&bg_color=0A0A0A&border_radius=14" width="49%" align="top" alt="what I'm listening to on last.fm">
 
-**Frontend**
+<br><br>
 
-<picture>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,vite,html,css,bootstrap&theme=dark" alt="frontend">
-</picture>
+<details>
+<summary><code>$ ssh indratensei@github.com</code></summary>
+<br>
+<img src="https://raw.githubusercontent.com/IndraTensei/indratensei/main/terminal.gif" width="100%" alt="terminal">
+</details>
 
-**Backend**
+<br>
 
-<picture>
-  <img src="https://skillicons.dev/icons?i=nodejs,bun,deno,express,fastapi,graphql,nginx,jest&theme=dark" alt="backend">
-</picture>
+<a href="https://www.indratensei.me"><img src="https://img.shields.io/badge/indratensei.me-E8262D?style=for-the-badge&logoColor=EEE8DB" alt="portfolio"></a>
+<a href="https://www.linkedin.com/in/ashish-thomas-53ab56126/"><img src="https://img.shields.io/badge/LinkedIn-0A0A0A?style=for-the-badge&logo=linkedin&logoColor=EEE8DB" alt="linkedin"></a>
+<a href="https://discord.com/users/423761164955287568"><img src="https://img.shields.io/badge/Discord-0A0A0A?style=for-the-badge&logo=discord&logoColor=EEE8DB" alt="discord"></a>
+<a href="https://twitter.com/indratensei"><img src="https://img.shields.io/badge/X-0A0A0A?style=for-the-badge&logo=x&logoColor=EEE8DB" alt="x"></a>
+<a href="https://t.me/indratenseii"><img src="https://img.shields.io/badge/Telegram-0A0A0A?style=for-the-badge&logo=telegram&logoColor=EEE8DB" alt="telegram"></a>
+<a href="https://www.instagram.com/blaze.rrrr/"><img src="https://img.shields.io/badge/Instagram-0A0A0A?style=for-the-badge&logo=instagram&logoColor=EEE8DB" alt="instagram"></a>
+<a href="https://youtube.com/@roronoa_zoro"><img src="https://img.shields.io/badge/YouTube-0A0A0A?style=for-the-badge&logo=youtube&logoColor=EEE8DB" alt="youtube"></a>
+<a href="https://www.last.fm/user/indratenseii"><img src="https://img.shields.io/badge/Last.fm-0A0A0A?style=for-the-badge&logo=last.fm&logoColor=EEE8DB" alt="last.fm"></a>
+<a href="https://codesandbox.io/u/indratensei"><img src="https://img.shields.io/badge/CodeSandbox-0A0A0A?style=for-the-badge&logo=codesandbox&logoColor=EEE8DB" alt="codesandbox"></a>
+<a href="https://paypal.me/indratensei"><img src="https://img.shields.io/badge/PayPal-0A0A0A?style=for-the-badge&logo=paypal&logoColor=EEE8DB" alt="paypal"></a>
 
-**AI / Data**
-
-<picture>
-  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,opencv,jupyter,selenium&theme=dark" alt="ai-data">
-</picture>
-
-**Databases**
-
-<picture>
-  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,sqlite&theme=dark" alt="databases">
-</picture>
-
-**DevOps & Cloud**
+<br><br>
 
 <picture>
-  <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,aws,azure,gcp,cloudflare,jenkins,githubactions,grafana,prometheus&theme=dark" alt="devops">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake.svg">
+  <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake-dark.svg" width="100%" alt="contribution snake">
 </picture>
 
-**Tools & Environment**
-
-<picture>
-  <img src="https://skillicons.dev/icons?i=git,github,gitlab,linux,ubuntu,arch,neovim,vscode,idea,npm,pnpm,yarn,postman,cmake&theme=dark" alt="tools">
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-<picture>
-  <img src="https://github-readme-stats.vercel.app/api?username=IndraTensei&show_icons=true&theme=dracula&hide_border=true&count_private=true&include_all_commits=true&bg_color=282a36&title_color=bd93f9&icon_color=bd93f9&text_color=f8f8f2&border_color=44475a" alt="github stats">
-</picture>
-
-<picture>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IndraTensei&theme=dracula&hide_border=true&background=282a36&stroke=44475a&ring=bd93f9&fire=ff6b35&currStreakLabel=bd93f9&sideLabels=f8f8f2&dates=6272a4" alt="streak">
-</picture>
-
-</div>
-
-<div align="center">
-
-<picture>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IndraTensei&layout=compact&theme=dracula&hide_border=true&bg_color=282a36&title_color=bd93f9&text_color=f8f8f2&border_color=44475a&langs_count=10" alt="top langs">
-</picture>
-
-</div>
-
-<div align="center">
-
-<picture>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=IndraTensei&theme=dracula&hide_border=true&bg_color=282a36&color=f8f8f2&line=bd93f9&point=ff79c6&area=true&area_color=44475a" alt="activity graph">
-</picture>
-
-</div>
-
-<div align="center">
-
-<picture>
-  <img src="https://github-profile-trophy.vercel.app/?username=IndraTensei&theme=dracula&no-frame=true&no-bg=true&row=1&column=7&margin-w=8" alt="trophies">
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-### Recent Activity
-
-</div>
-
-<!--START_SECTION:activity-->
-1. 🎉 Merged PR [#3](https://github.com/IndraTensei/indratensei/pull/3) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
-2. 💪 Opened PR [#3](https://github.com/IndraTensei/indratensei/pull/3) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
-3. 🎉 Merged PR [#2](https://github.com/IndraTensei/indratensei/pull/2) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
-4. 💪 Opened PR [#2](https://github.com/IndraTensei/indratensei/pull/2) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
-5. 🎉 Merged PR [#1](https://github.com/IndraTensei/indratensei/pull/1) in [IndraTensei/indratensei](https://github.com/IndraTensei/indratensei)
-<!--END_SECTION:activity-->
-
----
-
-<div align="center">
-
-### Recently Played
-
-<picture>
-  <img src="https://lastfm-recently-played.vercel.app/api?user=indratenseii&count=5&width=500&loved=true&show_user=header&bg_color=282a36&border_radius=8" alt="last.fm">
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-### Connect
-
-<a href="https://www.linkedin.com/in/ashish-thomas-53ab56126/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin"></a>
-<a href="https://twitter.com/indratensei"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="twitter"></a>
-<a href="https://youtube.com/@roronoa_zoro"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"></a>
-<a href="https://discord.com/users/423761164955287568"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="discord"></a>
-<a href="https://t.me/indratenseii"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="telegram"></a>
-<a href="https://www.instagram.com/blaze.rrrr/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="instagram"></a>
-<a href="https://codesandbox.io/u/indratensei"><img src="https://img.shields.io/badge/CodeSandbox-000000?style=for-the-badge&logo=codesandbox&logoColor=white" alt="codesandbox"></a>
-<a href="https://www.last.fm/user/indratenseii"><img src="https://img.shields.io/badge/Last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white" alt="lastfm"></a>
-<a href="https://paypal.me/indratensei"><img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="paypal"></a>
-
-</div>
-
----
-
-<div align="center">
-
-<picture>
-  <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake-dark.svg" alt="snake">
-</picture>
+<sub>転生 <i>tensei</i>, reincarnation &nbsp;·&nbsp; 灰 <i>hai</i>, ash &nbsp;·&nbsp; that's the whole name</sub>
+<br>
+<img src="https://komarev.com/ghpvc/?username=IndraTensei&style=flat-square&color=E8262D&label=visitors" alt="visitors">
 
 </div>

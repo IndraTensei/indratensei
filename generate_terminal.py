@@ -52,15 +52,15 @@ def stat(attr, default="-"):
     return default if val in (None, "") else val
 
 
-def top_langs(n=5):
+def top_langs(n=4):
     fallback = [
-        ("Python", 40.0),
-        ("TypeScript", 25.0),
-        ("JavaScript", 15.0),
-        ("C++", 12.0),
-        ("Go", 8.0),
+        ("Python", 45.0),
+        ("TypeScript", 33.0),
+        ("JavaScript", 20.0),
+        ("Shell", 1.0),
     ]
-    excluded = {"php"}  # side-project noise, keep it out of the top langs
+    # old side projects and markup, not what I write day to day
+    excluded = {"php", "html", "css", "scss", "less", "glsl", "lua", "cython", "c", "c++", "kotlin"}
     raw = getattr(stats, "languages_sorted", None) if stats else None
     if not raw:
         return fallback
@@ -105,10 +105,10 @@ line(12, f"  {B}{PURPLE}indratensei{R}{GRAY}@{R}{B}{CYAN}github{R}")
 line(13, f"  {GRAY}{'-' * 47}{R}")
 
 info = [
-    ("OS", "Ubuntu 24.04 LTS x86_64"),
-    ("Shell", "zsh + tmux + neovim"),
-    ("Location", "Mumbai, India (UTC+5:30)"),
-    ("Focus", "Full-Stack / DevOps / Cloud / AI"),
+    ("OS", "Windows 11 + Oracle Cloud boxes"),
+    ("Shell", "PowerShell, Git Bash, Claude Code"),
+    ("Location", "Navi Mumbai, India (UTC+5:30)"),
+    ("Focus", "AI agents / bots / voice / web"),
     ("Followers", str(stat("total_followers"))),
     ("Stars", str(stat("total_stargazers"))),
     ("Commits", str(stat("total_commits_all_time"))),
@@ -119,7 +119,7 @@ for i, (key, val) in enumerate(info):
 t.clone_frame(15)
 
 # ---- scene 3: dynamic skill bars ----
-cmd(24, "./skills --top 5")
+cmd(24, "./skills --top 4")
 langs = top_langs()
 max_pct = max(pct for _, pct in langs) or 1.0
 BAR_WIDTH = 20
@@ -131,7 +131,7 @@ t.clone_frame(12)
 
 # ---- scene 4: status outro ----
 cmd(31, "echo $STATUS")
-line(32, f"  {GREEN}* online{R} {GRAY}--{R} building, shipping, repeating")
+line(32, f"  {GREEN}* online{R} {GRAY}--{R} probably arguing with a WhatsApp bot")
 t.clone_frame(10)
 
 # ---- resting prompt ----
