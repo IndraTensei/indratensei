@@ -39,8 +39,6 @@
   <img src="https://raw.githubusercontent.com/IndraTensei/indratensei/output/snake-dark.svg" width="100%" alt="contribution snake">
 </picture>
 
-<sub>転生 <i>tensei</i>, reincarnation &nbsp;·&nbsp; 灰 <i>hai</i>, ash &nbsp;·&nbsp; that's the whole name</sub>
-<br>
 <img src="https://www.indratensei.me/api/gh-views" alt="visitors">
 
 </div>
