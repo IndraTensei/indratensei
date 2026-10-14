@@ -20,7 +20,7 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like 
 INK, PAPER, BLOOD = "#0a0a0a", "#eee8db", "#e8262d"
 
 LATIN = string.ascii_letters + string.digits + " .,:;/+×·'&()!?-_%#@"
-KANJI = "転生灰装備言絵鋼蔵繋智城戦績話金店覇"
+KANJI = "転生灰装備言絵鋼蔵繋智城能力話声金動"
 
 
 def get(url):
@@ -60,7 +60,7 @@ HALFTONE = f'<pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUs
 
 def header():
     W, H = 1200, 420
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Indra Tensei. Ash, agentic software engineer from Navi Mumbai.">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Indra Tensei. Ash, AI agentic engineer from Navi Mumbai.">
 <defs>
 <style>{fonts_css("D", "S", "M", "K")}
 .d{{font-family:D,Impact,sans-serif}} .s{{font-family:S,Georgia,serif;font-style:italic}} .m{{font-family:M,ui-monospace,monospace;letter-spacing:.22em}} .k{{font-family:K,serif}}
@@ -93,7 +93,7 @@ def header():
   <text x="66" y="300">TENSEI<tspan fill="{BLOOD}">.</tspan></text>
 </g>
 <text class="s up" x="72" y="350" font-size="32" fill="{PAPER}" fill-opacity=".86" style="animation-delay:.55s">Ash. I build AI agents, and the bots people actually live in.</text>
-<text class="m up" x="72" y="390" font-size="14" fill="{PAPER}" fill-opacity=".45" style="animation-delay:.75s">AGENTIC SOFTWARE ENGINEER  /  WHATSAPP · DISCORD · VOICE · WEB</text>
+<text class="m up" x="72" y="390" font-size="14" fill="{PAPER}" fill-opacity=".45" style="animation-delay:.75s">AI AGENTIC ENGINEER  /  AGENTS · BOTS · VOICE · WEB</text>
 </svg>'''
 
 
@@ -188,78 +188,85 @@ def loadout():
 </svg>'''
 
 
-# ---------------------------------------------------------------- record
+# ---------------------------------------------------------------- abilities
 
-# the numbers from production, one word-pair each
-STATS = [
-    ("50", "+", "TOURNEYS", "A MONTH", "戦"),
-    ("2K", "+", "BOT MSGS", "A DAY", "話"),
-    ("1K", "+", "TOP-UP", "USERS", "金"),
-    ("500", "+", "SHOPPING", "IN WHATSAPP", "店"),
-    ("100", "+", "LIVE", "VIEWERS", "覇"),
+# what I can build, like a character sheet. name, how, and a proof tag where there is one
+SKILLS = [
+    ("智", "AGENTS", "TOOLS · MCP · RAG", None),
+    ("話", "BOTS", "WHATSAPP · DISCORD", "2K+ MSGS A DAY"),
+    ("声", "VOICE", "PHONE CALLS · HINDI", None),
+    ("金", "COMMERCE", "WALLETS · PAYMENTS", "SCALED TO 1K+ USERS"),
+    ("動", "WEB", "SITES THAT MOVE", None),
 ]
-# what's on the bench right now, scrolling like a match ticker
-NOW = ["ZERO, THE WHATSAPP BOT THAT TALKS BACK", "ZERO ON DISCORD", "JARVIS, HANDS-FREE", "A COURIER AGENT THAT TAKES CALLS IN HINDI", "INTERVIEW TRAP"]
+# use cases, scrolling like a match ticker
+ASK = [
+    "A SUPPORT AGENT THAT ANSWERS FROM YOUR DOCS",
+    "A WHATSAPP BOT THAT TAKES ORDERS",
+    "A PHONE AGENT THAT SPEAKS HINDI",
+    "MCP SERVERS FOR YOUR APIS",
+    "AN ECONOMY FOR YOUR DISCORD",
+    "AGENTS THAT RUN THE BORING OPS",
+    "A SITE THAT FEELS ALIVE",
+]
 
 
-def record():
+def abilities():
     W, PAD, GAP = 1200, 40, 16
     pw = (W - 2 * PAD - 4 * GAP) / 5
-    ph = 168
+    ph = 172
     py = 104
-    ty = py + ph + 22  # ticker strip
+    ty = py + ph + 22
     H = ty + 50 + PAD - 8
     out = []
 
-    out.append(f'<text class="k" x="{PAD}" y="68" font-size="34" fill="{BLOOD}">戦績</text>')
-    out.append(f'<text class="d" x="{PAD + 80}" y="66" font-size="30" fill="{PAPER}">RECORD</text>')
-    out.append(f'<circle class="live" cx="{W - PAD - 150}" cy="57" r="5" fill="{BLOOD}"/>')
-    out.append(f'<text class="m" x="{W - PAD}" y="62" font-size="13" fill="{PAPER}" fill-opacity=".55" text-anchor="end">LIVE IN PROD</text>')
+    out.append(f'<text class="k" x="{PAD}" y="68" font-size="34" fill="{BLOOD}">能力</text>')
+    out.append(f'<text class="d" x="{PAD + 80}" y="66" font-size="30" fill="{PAPER}">ABILITIES</text>')
+    out.append(f'<text class="m" x="{W - PAD}" y="62" font-size="13" fill="{PAPER}" fill-opacity=".45" text-anchor="end">WHAT I CAN BUILD FOR YOU</text>')
     out.append(f'<line x1="{PAD}" y1="84" x2="{W - PAD}" y2="84" stroke="{PAPER}" stroke-opacity=".12"/>')
 
-    for i, (num, plus, l1, l2, kj) in enumerate(STATS):
+    for i, (kj, name, how, proof) in enumerate(SKILLS):
         x = PAD + i * (pw + GAP)
         out.append(f'<g class="up" style="animation-delay:{0.1 + i * 0.09:.2f}s">')
         out.append(f'<clipPath id="c{i}"><rect x="{x}" y="{py}" width="{pw}" height="{ph}" rx="12"/></clipPath>')
         out.append(f'<rect x="{x}" y="{py}" width="{pw}" height="{ph}" rx="12" fill="{PAPER}" fill-opacity=".035" stroke="{PAPER}" stroke-opacity=".1"/>')
-        out.append(f'<text class="k" x="{x + pw + 14}" y="{py + ph + 22}" font-size="150" fill="{PAPER}" fill-opacity=".05" text-anchor="end" clip-path="url(#c{i})">{kj}</text>')
-        out.append(f'<text class="d" x="{x + 20}" y="{py + 78}" font-size="52" fill="{PAPER}">{num}<tspan fill="{BLOOD}">{plus}</tspan></text>')
-        out.append(f'<rect class="bar" x="{x + 22}" y="{py + 98}" width="28" height="3" fill="{BLOOD}" style="animation-delay:{0.4 + i * 0.09:.2f}s"/>')
-        out.append(f'<text class="m" x="{x + 22}" y="{py + 128}" font-size="13" fill="{PAPER}" fill-opacity=".72">{l1}</text>')
-        out.append(f'<text class="m" x="{x + 22}" y="{py + 148}" font-size="13" fill="{PAPER}" fill-opacity=".42">{l2}</text>')
+        out.append(f'<text class="k" x="{x + pw + 16}" y="{py + ph + 26}" font-size="156" fill="{PAPER}" fill-opacity=".045" text-anchor="end" clip-path="url(#c{i})">{kj}</text>')
+        out.append(f'<text class="k" x="{x + 20}" y="{py + 46}" font-size="30" fill="{BLOOD}">{kj}</text>')
+        size = 26 if len(name) <= 6 else 22
+        out.append(f'<text class="d" x="{x + 20}" y="{py + 92}" font-size="{size}" fill="{PAPER}">{name}</text>')
+        out.append(f'<rect class="bar" x="{x + 22}" y="{py + 106}" width="28" height="3" fill="{BLOOD}" style="animation-delay:{0.4 + i * 0.09:.2f}s"/>')
+        out.append(f'<text class="m" x="{x + 22}" y="{py + 132}" font-size="11.5" fill="{PAPER}" fill-opacity=".6">{how}</text>')
+        if proof:
+            out.append(f'<text class="m" x="{x + 22}" y="{py + 153}" font-size="11.5" fill="{BLOOD}">{proof}</text>')
         out.append('</g>')
 
     # ticker: JetBrains Mono is monospaced, so one loop's width is exact
     fs, ls = 14, 2.5
     adv = fs * 0.6 + ls
     sep = "   ·   "
-    loop = sep.join(NOW) + sep
+    loop = sep.join(ASK) + sep
     lw = len(loop) * adv
-    spans = "".join(
-        f'<tspan fill="{BLOOD}">·</tspan>' if ch == "·" else ch
-        for ch in loop.replace("&", "&amp;")
-    )
+    spans = "".join(f'<tspan fill="{BLOOD}">·</tspan>' if ch == "·" else ch for ch in loop)
+    pill = 156
     out.append(f'<rect x="{PAD}" y="{ty}" width="{W - 2 * PAD}" height="44" rx="10" fill="{BLOOD}" fill-opacity=".09" stroke="{BLOOD}" stroke-opacity=".35"/>')
-    out.append(f'<rect x="{PAD}" y="{ty}" width="96" height="44" rx="10" fill="{BLOOD}"/>')
-    out.append(f'<rect x="{PAD + 80}" y="{ty}" width="16" height="44" fill="{BLOOD}"/>')
-    out.append(f'<text class="d" x="{PAD + 48}" y="{ty + 29}" font-size="17" fill="{INK}" text-anchor="middle">NOW</text>')
-    out.append(f'<clipPath id="tk"><rect x="{PAD + 108}" y="{ty}" width="{W - 2 * PAD - 120}" height="44"/></clipPath>')
-    out.append(f'<g clip-path="url(#tk)"><g class="tick">')
+    out.append(f'<rect x="{PAD}" y="{ty}" width="{pill}" height="44" rx="10" fill="{BLOOD}"/>')
+    out.append(f'<rect x="{PAD + pill - 16}" y="{ty}" width="16" height="44" fill="{BLOOD}"/>')
+    out.append(f'<text class="d" x="{PAD + pill / 2}" y="{ty + 29}" font-size="15" fill="{INK}" text-anchor="middle">ASK ME FOR</text>')
+    out.append(f'<clipPath id="tk"><rect x="{PAD + pill + 12}" y="{ty}" width="{W - 2 * PAD - pill - 24}" height="44"/></clipPath>')
+    out.append('<g clip-path="url(#tk)"><g class="tick">')
     for k in range(3):
-        out.append(f'<text class="mt" x="{PAD + 116 + k * lw:.1f}" y="{ty + 27}" font-size="{fs}" fill="{PAPER}" fill-opacity=".85" xml:space="preserve">{spans}</text>')
+        out.append(f'<text class="mt" x="{PAD + pill + 20 + k * lw:.1f}" y="{ty + 27}" font-size="{fs}" fill="{PAPER}" fill-opacity=".85" xml:space="preserve">{spans}</text>')
     out.append('</g></g>')
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Record: 50+ tournaments a month, 2,000+ bot messages a day, 1,000+ top-up users, 500+ people shopping inside WhatsApp, 100+ live viewers. Now building: {", ".join(NOW).title()}.">
+    label = "Abilities: AI agents (tools, MCP, RAG); bots on WhatsApp and Discord, 2,000+ messages a day; voice agents for phone calls in Hindi; commerce backends, scaled to 1,000+ users; websites that move. Ask me for: " + "; ".join(ASK).lower() + "."
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{label}">
 <defs>
 <style>{fonts_css("D", "M", "K")}
-.d{{font-family:D,Impact,sans-serif}} .m{{font-family:M,ui-monospace,monospace;letter-spacing:.18em}} .mt{{font-family:M,ui-monospace,monospace;letter-spacing:{ls}px}} .k{{font-family:K,serif}}
+.d{{font-family:D,Impact,sans-serif}} .m{{font-family:M,ui-monospace,monospace;letter-spacing:.16em}} .mt{{font-family:M,ui-monospace,monospace;letter-spacing:{ls}px}} .k{{font-family:K,serif}}
 .up{{animation:up .8s cubic-bezier(.16,1,.3,1) backwards}}
 .bar{{transform-box:fill-box;transform-origin:left;animation:grow .9s cubic-bezier(.16,1,.3,1) backwards}}
-.live{{animation:pulse 1.6s ease-in-out infinite}}
 .tick{{animation:tick {lw / 38:.1f}s linear infinite}}
 @keyframes up{{from{{opacity:0;transform:translateY(12px)}}to{{opacity:1;transform:none}}}}
 @keyframes grow{{from{{transform:scaleX(0)}}}}
-@keyframes pulse{{50%{{opacity:.25}}}}
 @keyframes tick{{to{{transform:translateX(-{lw:.1f}px)}}}}
 </style>
 {HALFTONE}
@@ -269,11 +276,11 @@ def record():
 <rect width="{W}" height="{H}" rx="18" fill="{INK}"/>
 <rect width="{W}" height="{H}" fill="url(#dots)" opacity=".07" mask="url(#m)"/>
 {chr(10).join(out)}
-</svg>'''
+</svg>"""
 
 
 if __name__ == "__main__":
-    for name, build in (("header.svg", header), ("record.svg", record), ("loadout.svg", loadout)):
+    for name, build in (("header.svg", header), ("abilities.svg", abilities), ("loadout.svg", loadout)):
         with open(os.path.join(HERE, name), "w", encoding="utf-8", newline="\n") as f:
             f.write(build())
         print(name, os.path.getsize(os.path.join(HERE, name)) // 1024, "KB")

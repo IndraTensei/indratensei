@@ -1,8 +1,8 @@
 <div align="center">
 
-<a href="https://www.indratensei.me"><img src="art/header.svg" width="100%" alt="Indra Tensei. Ash, agentic software engineer from Navi Mumbai."></a>
+<a href="https://www.indratensei.me"><img src="art/header.svg" width="100%" alt="Indra Tensei. Ash, AI agentic engineer from Navi Mumbai."></a>
 <br>
-<a href="https://www.indratensei.me"><img src="art/record.svg" width="100%" alt="Record: 50+ tournaments a month, 2,000+ bot messages a day, 1,000+ top-up users, 500+ people shopping inside WhatsApp, 100+ live viewers. Now building Zero, Zero on Discord, JARVIS, a courier voice agent and Interview Trap."></a>
+<img src="art/abilities.svg" width="100%" alt="Abilities: AI agents (tools, MCP, RAG), bots on WhatsApp and Discord (2,000+ messages a day), voice agents for phone calls in Hindi, commerce backends scaled to 1,000+ users, and websites that move.">
 <br>
 <img src="art/loadout.svg" width="100%" alt="Loadout. Languages: Python, JavaScript, TypeScript. Frontend: React, Tailwind, Next.js, GSAP. Backend: Node.js, Zod, Express, Fastify. Data: PostgreSQL, MongoDB, Drizzle, Redis. Bots: Discord, WhatsApp, FFmpeg, Puppeteer. AI: OpenRouter, Deepgram, OpenAI, Claude. Ship: Docker, Vercel, GitHub Actions, Oracle Cloud.">
 
@@ -41,6 +41,6 @@
 
 <sub>転生 <i>tensei</i>, reincarnation &nbsp;·&nbsp; 灰 <i>hai</i>, ash &nbsp;·&nbsp; that's the whole name</sub>
 <br>
-<img src="https://komarev.com/ghpvc/?username=IndraTensei&style=flat-square&color=E8262D&label=visitors" alt="visitors">
+<img src="https://www.indratensei.me/api/gh-views" alt="visitors">
 
 </div>
